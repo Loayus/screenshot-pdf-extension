@@ -1,0 +1,35 @@
+# OS Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Chrome Extension
+*.crx
+*.pem
+*.zip
+
+# Node modules (si vous ajoutez npm plus tard)
+node_modules/
+package-lock.json
+
+# Build files
+dist/
+build/
+
+# Temporary files
+tmp/
+temp/
