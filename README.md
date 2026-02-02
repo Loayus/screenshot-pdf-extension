@@ -16,7 +16,7 @@ Une extension Chrome pour capturer automatiquement plusieurs captures d'écran e
 
 1. Clonez ce dépôt :
 ```bash
-git clone https://github.com/VOTRE_USERNAME/screenshot-pdf-extension.git
+git clone https://github.com/Loayus/screenshot-pdf-extension.git
 cd screenshot-pdf-extension
 ```
 
@@ -106,9 +106,9 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 
 ## 👤 Auteur
 
-**Votre Nom**
+**Ledoux Antoine**
 
-- GitHub: [@VOTRE_USERNAME](https://github.com/VOTRE_USERNAME)
+- GitHub: [Loayus](https://github.com/VOTRE_USERNAME)
 
 ## 🌟 Remerciements
 

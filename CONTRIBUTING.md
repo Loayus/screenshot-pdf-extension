@@ -26,7 +26,7 @@ Pour proposer une nouvelle fonctionnalité :
 
 1. **Fork le projet**
    ```bash
-   git clone https://github.com/VOTRE_USERNAME/screenshot-pdf-extension.git
+   git clone https://github.com/Loayus/screenshot-pdf-extension.git
    cd screenshot-pdf-extension
    ```
 
