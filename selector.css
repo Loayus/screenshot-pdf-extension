@@ -1,0 +1,91 @@
+#screenshot-selector-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999998;
+    cursor: crosshair;
+}
+
+#screenshot-selector-box {
+    position: fixed;
+    border: 3px solid #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+    z-index: 999999;
+    cursor: move;
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);
+}
+
+.screenshot-resize-handle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #4CAF50;
+    border: 2px solid white;
+    border-radius: 50%;
+    z-index: 1000000;
+}
+
+.handle-nw { top: -6px; left: -6px; cursor: nw-resize; }
+.handle-ne { top: -6px; right: -6px; cursor: ne-resize; }
+.handle-sw { bottom: -6px; left: -6px; cursor: sw-resize; }
+.handle-se { bottom: -6px; right: -6px; cursor: se-resize; }
+.handle-n { top: -6px; left: 50%; transform: translateX(-50%); cursor: n-resize; }
+.handle-s { bottom: -6px; left: 50%; transform: translateX(-50%); cursor: s-resize; }
+.handle-w { top: 50%; left: -6px; transform: translateY(-50%); cursor: w-resize; }
+.handle-e { top: 50%; right: -6px; transform: translateY(-50%); cursor: e-resize; }
+
+#screenshot-selector-info {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    z-index: 1000001;
+    pointer-events: none;
+}
+
+#screenshot-selector-controls {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000001;
+    display: flex;
+    gap: 10px;
+}
+
+.screenshot-selector-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+}
+
+.screenshot-selector-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+#screenshot-selector-validate {
+    background: #4CAF50;
+    color: white;
+}
+
+#screenshot-selector-cancel {
+    background: #f44336;
+    color: white;
+}
+
+#screenshot-selector-reset {
+    background: #2196F3;
+    color: white;
+}

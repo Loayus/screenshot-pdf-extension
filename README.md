@@ -1,6 +1,20 @@
 # Screenshot to PDF - Chrome Extension
 
+![Version](https://img.shields.io/badge/version-1.1-blue.svg)
+![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-brightgreen.svg)
+![Manifest](https://img.shields.io/badge/manifest-v3-orange.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
 Une extension Chrome pour capturer automatiquement plusieurs captures d'écran et les exporter en un seul fichier PDF.
+
+## ⚡ Démarrage rapide
+
+1. **Installez** l'extension (voir [Installation](#-installation))
+2. **Ouvrez** la page web que vous souhaitez capturer
+3. **Cliquez** sur l'icône de l'extension
+4. **Configurez** (optionnel) : orientation, zone de capture, nombre de pages
+5. **Lancez** avec "🚀 Démarrer la capture"
+6. **Récupérez** votre PDF automatiquement téléchargé !
 
 ## 🚀 Fonctionnalités
 
@@ -54,6 +68,9 @@ cd screenshot-pdf-extension
   - `chrome.tabs.captureVisibleTab` : Capture d'écran
   - `chrome.scripting` : Injection de scripts
   - `chrome.downloads` : Téléchargement du PDF
+  - `chrome.storage.local` : Sauvegarde des préférences utilisateur
+- **OffscreenCanvas** : Recadrage d'images dans le service worker
+- **createImageBitmap** : Traitement d'images compatible avec les service workers
 
 ## 📁 Structure du projet
 
@@ -79,26 +96,73 @@ Les contributions sont les bienvenues ! N'hésitez pas à :
 
 Consultez [CONTRIBUTING.md](CONTRIBUTING.md) pour plus de détails.
 
+## ❓ FAQ (Questions Fréquentes)
+
+### Comment définir une zone de capture ?
+1. Cliquez sur "🎯 Définir la zone"
+2. Une boîte de sélection apparaît sur la page
+3. Redimensionnez et déplacez-la pour cadrer votre zone
+4. Cliquez sur "✓ Valider la sélection"
+
+### La zone de capture est-elle sauvegardée ?
+Oui ! La zone que vous définissez est automatiquement sauvegardée et sera réutilisée pour toutes vos prochaines captures, même après redémarrage du navigateur.
+
+### Comment revenir à la capture plein écran ?
+Cliquez simplement sur le bouton "🗑️ Réinitialiser" dans la section "Zone de capture".
+
+### Quelle orientation choisir ?
+- **Paysage (🖼️)** : Recommandé pour les présentations, diaporamas horizontaux
+- **Portrait (📱)** : Idéal pour les documents verticaux, captures mobiles
+
+### L'extension fonctionne-t-elle sur tous les sites ?
+Oui, l'extension fonctionne sur tous les sites web. Cependant, certains sites avec des protections spéciales peuvent bloquer l'injection de scripts pour la navigation automatique.
+
+### Combien de captures puis-je faire ?
+Vous pouvez capturer entre 1 et 200 pages. Pour des raisons de performance et de mémoire, il est recommandé de faire des lots de 50 captures maximum.
+
+### Le PDF est-il compressé ?
+Les captures sont en qualité PNG maximale. Le fichier PDF peut donc être volumineux. Pour réduire la taille, vous pouvez utiliser des outils de compression PDF en ligne après génération.
+
 ## 📝 Cas d'usage
 
 Cette extension est particulièrement utile pour :
-- Exporter des présentations Canva en PDF
-- Capturer des séquences de diapositives
-- Créer des documentations visuelles
-- Archiver des contenus web paginés
+- **Exporter des présentations** Canva, Google Slides, PowerPoint en ligne en PDF
+- **Capturer des diaporamas** avec une zone spécifique (sans les barres d'outils)
+- **Créer des documentations visuelles** en capturant uniquement le contenu pertinent
+- **Archiver des contenus web paginés** (livres en ligne, tutoriels, etc.)
+- **Générer des PDF optimisés** sans éléments superflus (menus, sidebars, etc.)
+- **Capturer des vidéos frame par frame** en définissant la zone du lecteur vidéo
 
 ## ⚙️ Permissions requises
 
 - `activeTab` : Accès à l'onglet actif pour la capture
 - `scripting` : Injection de scripts pour la navigation automatique
 - `downloads` : Téléchargement du PDF généré
+- `storage` : Sauvegarde des préférences (zone de capture, orientation)
 - `<all_urls>` : Fonctionne sur tous les sites web
 
-## 🐛 Problèmes connus
+## 🐛 Problèmes connus & Solutions
 
+### Problèmes
 - Le délai entre les captures peut nécessiter un ajustement selon la vitesse de chargement des pages
 - Certains sites peuvent bloquer l'injection de scripts
 - La qualité des captures dépend de la résolution de l'écran
+
+### Solutions recommandées
+- **Pages lentes** : Augmentez le délai entre captures (2000-3000ms recommandé)
+- **Zone mal positionnée après scroll** : Redéfinissez la zone après avoir scrollé à la position souhaitée
+- **Captures floues** : Utilisez le zoom du navigateur à 100% pour une qualité optimale
+- **Extension qui ne répond pas** : Rechargez l'extension dans `chrome://extensions/`
+
+## ✨ Nouveautés (v1.1)
+
+- 🎯 **Sélection de zone personnalisée** : Interface visuelle pour définir précisément la zone à capturer
+- 📐 **Redimensionnement dynamique** : 8 poignées pour ajuster la zone avec précision
+- 💾 **Persistance des réglages** : Vos préférences sont sauvegardées automatiquement
+- 🎨 **Choix d'orientation** : PDF en mode Paysage ou Portrait
+- 🔄 **Recadrage intelligent** : Utilisation d'APIs modernes (`createImageBitmap`, `OffscreenCanvas`)
+- 🖼️ **Interface améliorée** : Popup agrandi (400px) pour une meilleure lisibilité
+- 🗑️ **Réinitialisation facile** : Bouton pour revenir au mode plein écran
 
 ## 📄 Licence
 
@@ -108,7 +172,7 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 
 **Ledoux Antoine**
 
-- GitHub: [Loayus](https://github.com/VOTRE_USERNAME)
+- GitHub: [@Loayus](https://github.com/Loayus)
 
 ## 🌟 Remerciements
 

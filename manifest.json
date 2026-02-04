@@ -1,12 +1,13 @@
 {
   "manifest_version": 3,
   "name": "Screenshot to PDF",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Capture automatique d'écran avec navigation et export PDF",
   "permissions": [
     "activeTab",
     "scripting",
-    "downloads"
+    "downloads",
+    "storage"
   ],
   "host_permissions": [
     "<all_urls>"
@@ -18,7 +19,13 @@
     "service_worker": "background.js"
   },
   "web_accessible_resources": [{
-    "resources": ["jspdf.umd.min.js"],
+    "resources": ["jspdf.umd.min.js", "selector.html", "selector.css"],
     "matches": ["<all_urls>"]
+  }],
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["selector.js"],
+    "css": ["selector.css"],
+    "run_at": "document_idle"
   }]
 }
